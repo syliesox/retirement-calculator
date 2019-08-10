@@ -10,7 +10,7 @@ The user inputs specific details into the input fields and clicks "submit". Then
 
 GoogleMaps API is used as the background, with pins dropped on each of 10 possible retirement locations through an array and loop.
 
-A header was included that links the a government site with comprehensive advice and resources for US Citizens planning to retire abroad.
+A header was included that links a government site with comprehensive advice and resources for US Citizens planning to retire abroad.
 
 
 ## Technologies Used

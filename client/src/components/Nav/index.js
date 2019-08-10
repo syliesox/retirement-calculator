@@ -1,17 +1,30 @@
 import React from "react";
 import "./style.css";
 // import { Link } from 'react-router-dom';
-
+const PORT = process.env.PORT || 5000;
 
 function Nav(props) {
     const renderLoginBtn = () => {
       if (props.isAuthenticated) {
         return (
-          <button onClick={logout}>Logout</button>
+          <a href={"http://localhost:" + PORT + "/api/logout"}>
+            <div className="google-btn">
+              <div className="google-icon-wrapper">
+                <img
+                  className="google-icon"
+                  src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                  alt="signout"
+                />
+              </div>
+              <p className="btn-text">
+                <b>Logout</b>
+              </p>
+            </div>
+          </a>
         )
       } else {
         return (
-          <a href="http://localhost:5000/auth/google">
+          <a href={"http://localhost:" + PORT + "/auth/google"}>
             <div className="google-btn">
               <div className="google-icon-wrapper">
                 <img
@@ -29,10 +42,6 @@ function Nav(props) {
       }
     }
 
-    const logout = () => {
-      console.log('logout');
-    }
-
     return (
     <div className="container-fluid sticky-top">
     <div className="row">
@@ -47,21 +56,6 @@ function Nav(props) {
                 </div>
                 <div className="google-btn-container">
                     {renderLoginBtn()}
-                    <a href="http://localhost:5000/auth/google">
-                    
-                      <div className="google-btn">
-                        <div className="google-icon-wrapper">
-                          <img
-                            className="google-icon"
-                            src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-                            alt="signin"
-                          />
-                        </div>
-                        <p className="btn-text">
-                          <b>Log in with Google</b>
-                        </p>
-                      </div>
-                    </a>
                 </div>
             </nav>
           </div>

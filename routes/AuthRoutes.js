@@ -1,21 +1,19 @@
 const passport = require('passport');
+const PORT = 3000;
 
 module.exports = app => {
-  app.get(
-    '/auth/google',
-    passport.authenticate('google', {
+  app.get('/auth/google', passport.authenticate('google', {
       scope: ['profile', 'email']
     })
   );
 
   app.get('/auth/google/callback', passport.authenticate('google'), (req, res) => {
-    res.redirect('http://localhost:3000')
+    res.redirect('http://localhost:' + PORT)
   });
 
   app.get('/api/logout', (req, res) => {
     req.logout();
-    // res.send(req.user);
-    // res.redirect('/');
+    res.redirect('http://localhost:' + PORT);
   });
 
   app.get('/api/current_user', (req, res) => {

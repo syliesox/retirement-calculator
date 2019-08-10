@@ -12,7 +12,7 @@ const keys = require('./config/keys');
 require('./db/models/User');
 require('./services/passport');
 
-mongoose.connect(keys.mongoURI);
+// mongoose.connect(keys.mongoURI);
 const app = express();
 
 app.use(
@@ -41,7 +41,8 @@ app.use("/api",routes);
 app.use(routes);
 
 // Connect to the Mongo DB.  This is now in connection-config.js
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/retirementDB");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/retirementDB");
+
 cookieKey: keys.cookieKey,
 
 // Start the server.

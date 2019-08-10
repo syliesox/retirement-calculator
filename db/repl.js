@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 require('../index.js').toContext(global);
 
 var shell = repl.start({
-  prompt: 'mongoose> ',
+  prompt: '<mongoose> ',
   input: process.stdin,
   output: process.stdout,
   useColors: true,
